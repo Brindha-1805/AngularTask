@@ -1,0 +1,42 @@
+<section class="sign up-block">
+   <div class="model">
+    <div class="section">
+        <h2 class="text-center">SignUp Form</h2>
+      <form [formGroup]="SignupForms">
+        <div class="form-group">
+            <label for="Email Id">Email id:</label>
+            <input type="text"  formControlName="Email id">
+            <div class="error" *ngIf="SignupForms.get('Email id').invalid">Email is required!</div><br><br>
+        </div>
+        <div>
+            <div class="form-group">
+                <label for="Password">PassWord:</label>
+                <input type="password" formControlName="PassWord">
+                <div class="error" *ngIf="SignupForms.get('PassWord').invalid">Password is required!</div><br><br>
+            </div>
+        </div>
+        <div>
+            <div class="form-group">
+                <label for="Password">confirmpaswd:</label>
+                <input type="password" formControlName="Confirmpaswd">
+                <div class="error" *ngIf="SignupForms.get('Confirmpaswd').invalid">confirmpaswd is required!</div><br><br>
+            </div>
+        </div>
+        <div class="clear-fix"></div>
+      <div class="form-group">
+        <input type="checkbox">
+        <label for="book">Agree with Terms&conditions.</label>
+      </div><br>
+      <div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-login float-center" value="sign up">
+        </div>
+      </div>
+    </form>
+
+    </div>
+    
+</div>
+
+</section>
+

@@ -1,0 +1,38 @@
+
+   
+    .register-block{
+        float:center;
+        width:40%;
+        padding: 100px;
+        
+       
+    }
+    .container{
+        background: #d3d3dd; 
+        border-radius: 30px; 
+       width: 70%;
+       height: 60%;
+       
+    }
+    .error{
+        color:red
+    }
+    .register-sec{
+        padding: 40px;
+        position: relative;
+        
+    }
+    h2{
+        margin-bottom: 30px;
+        font-weight: 800;
+        font-size: 30px;
+        color: #0069c0;
+        text-align: center;
+    }
+    .btn-login{
+        background: #0069c0;
+        color: #fff;
+        float: center;
+        font-weight: 600;
+    }
+   

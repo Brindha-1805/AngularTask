@@ -1,0 +1,19 @@
+<h1>Reative forms</h1>
+
+<form [formGroup]="forms">
+    <label for="Username">Username:</label>
+    <input type="text"  placeholder=" Enter your name here.." formControlName="Username">
+    <div class="error" *ngIf="forms.get('Username').invalid">username is invalid!</div><br>
+    <label for="Email">Email:</label>
+    <input  type="text" placeholder="Enter your email" formControlName="Email">
+    <div class="error" *ngIf="forms.get('Email').invalid">Email is invalid!</div><br>
+    <label for="password">Password:</label>
+    <input type="text" placeholder="Enter your password" formControlName="Password">
+    <div class="error" *ngIf="forms.get('Password').invalid">Password is invalid!</div><br>
+    <label for="confirm">Confirm pass.:</label>
+    <input type="text" placeholder="Enter your confirm password" formControlName="confirmpassword">
+    <div class="error" *ngIf="forms.get('confirmpassword').invalid">It is invalid!</div><br>
+    <button type="button">submit</button>
+
+    
+</form>
