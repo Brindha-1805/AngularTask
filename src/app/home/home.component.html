@@ -1,8 +1,13 @@
-
-<button type="submit">click!</button>
-<table>
-    <th>id</th>
-    <th>type</th>
+<button type="button" class="btn btn-primary"(click)="showStyle">primary</button>
+<div class="card" *ngIf="showFlag">
+    <div class="card body">This is some text within a card body.</div>
+</div>
+<table class="card">
+    <tr>
+        <th>id</th>
+        <th>type</th>
+    </tr>
+       
     <tr *ngFor="let data of arrData">
         <td>
             {{data.id}}
@@ -11,5 +16,6 @@
             {{data.title}}
         </td>
     </tr>
-
 </table>
+
+

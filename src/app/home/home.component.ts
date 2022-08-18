@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.MyData().subscribe(Response=>{
-      console.log('inside the data',Response)
-      this.arrData=Response
+      console.log('inside the data',Response.data)
+      // this.arrData = Response && Response.data
     })
   }
 
