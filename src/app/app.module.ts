@@ -12,6 +12,7 @@ import { NagvbarComponent } from './nagvbar/nagvbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
+import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 
 import { CommonModule } from '@angular/common';
 import { CommonserviceService } from './commonservice.service';
@@ -34,14 +35,16 @@ import { CommonserviceService } from './commonservice.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ModalModule
 
     
     
     
   
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
