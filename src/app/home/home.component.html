@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary"(click)="showStyle">primary</button>
+<button type="button" class="btn btn-primary"(click)="showStyle()">primary</button>
 <div class="card" *ngIf="showFlag">
     <div class="card body">This is some text within a card body.</div>
 </div>
@@ -21,7 +21,7 @@
                 <button (click)="openModal(template,data)">Edit</button>
             </td><br>
             <td>
-                <button (click)="openModel(data)">Delete</button>
+                <button (click)="deleteModel(data.id)">Delete</button>
             </td>
 
         </tr>
@@ -29,7 +29,10 @@
     
 
 </table>
+
 </div>
+
+    <app-dashboard [item]="CurrentItem" (newEvenEmitter)="addItem($event)"></app-dashboard>
 <!-- <div class="model">
     id:<input type="text" (ngmodel)="editData"/>
     title:<input value=""/>
@@ -46,14 +49,18 @@
       </button>
    </div>
    <div class="modal-body">
-      <label>Id:</label>
-      <input type="text"><br><br>
-      <lable>Title:</lable>
-      <input type="text">
-   </div>
-   <div class="modal-footer">
-      <button type="button" class="btn btn-primary" (click)="modalRef.hide()">update</button>
-   </div>
+   <form  [formGroup]="UserForm" (ngSubmit)="onClickSubmit(UserForm.value)" >
+        <label>Id:</label>
+        <input type="text"  class="form-control" formControlName="Id" [value]="Id"  ><br>
+        <lable>Title:</lable>
+        <input type="text" class="form-control"  formControlName="Title" [value]="Title">
+        <input type="submit"  class="btn btn-primary" value="Update" />
+    </form>
+                 
+    </div>
+    <div class="modal-footer">
+        <button  class="btn btn-primary" (click)="modalRef.hide()">clear</button>
+    </div>
 </ng-template>
 
 

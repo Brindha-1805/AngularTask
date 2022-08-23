@@ -11,10 +11,14 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
  UserForms: FormGroup;
  
- constructor( private router:Router) {}
- register(){
-  this.router.navigate(['/login'])
+ 
+ constructor( private router:Router) {
+   const data = this.router.getCurrentNavigation()?.extras?.state?.['hello']
+    console.log('inside the data',data)
  }
+  register(){
+  this.router.navigate(['/login'])}
+ 
 
   ngOnInit(): void {
      this.UserForms= new FormGroup({

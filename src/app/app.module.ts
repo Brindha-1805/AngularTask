@@ -11,11 +11,18 @@ import { RegisterComponent } from './register/register.component';
 import { NagvbarComponent } from './nagvbar/nagvbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { Router, RouterModule } from '@angular/router';
+
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 
 import { CommonModule } from '@angular/common';
 import { CommonserviceService } from './commonservice.service';
+import { AngularcrudComponent } from './angularcrud/angularcrud.component';
+import { Router ,RouterModule} from '@angular/router';
+import { AuthguardServiceService } from './authguard-service.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeadersInterceptor} from './headers.interceptor';
+
+
 
 
 
@@ -29,6 +36,7 @@ import { CommonserviceService } from './commonservice.service';
     RegisterComponent,
     NagvbarComponent,
     DashboardComponent,
+    AngularcrudComponent,
     
    ],
   imports: [
@@ -37,14 +45,19 @@ import { CommonserviceService } from './commonservice.service';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    ModalModule
+    ModalModule,
+    RouterModule
 
     
     
     
   
   ],
-  providers: [BsModalService],
+  providers: [BsModalService,AuthguardServiceService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HeadersInterceptor,
+    multi: true
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
