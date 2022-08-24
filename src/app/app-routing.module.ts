@@ -12,7 +12,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path: 'register',component:RegisterComponent,canActivate:[AuthenticationGuard]},
   { path:'login',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent}
+  {path:'dashboard',component:DashboardComponent},
+   {path:'lazy',loadChildren:() => import('./lazy/lazy.module').then(m=> m.LazyModule )}
 
 ]
 

@@ -15,21 +15,25 @@ export class CommonserviceService {
  }
  
  updateData(data:any){
+  console.log(data)
   const body={
     method:'PUT',
     body:JSON.stringify({
-      Id:data.id,
-      Title:data.title,
-      body:data.title,
-      userId:data.id     
+      Id:data.Id,
+      Title:data.Title,
+      body:data.Title,
+      userId:data.Id     
     }),
     
     Headers:{
       'content-type':'application/json; charset-UTF-8',
     },
   }
-
-  return this.http.put('$(Base_URL)/$(data.id)',body)
+     
+  return this.http.put(`${Base_URL}/${data.Id}`,body)
+ }
+ deleteData(data:any){
+  return this.http.delete(`${Base_URL}/${data}`)
  }
   
   

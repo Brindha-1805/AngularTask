@@ -18,10 +18,10 @@
             <td>{{ data.title }}</td>
             <td>{{ data.id }}</td>
             <td>
-                <button (click)="openModal(template,data)">Edit</button>
+                <button  class=" btn btn-primary" (click)="openModal(template,data)">Edit</button>
             </td><br>
             <td>
-                <button (click)="deleteModel(data.id)">Delete</button>
+                <button class="btn btn-primary" (click)="deleteModel(template2,data.id)">Delete</button>
             </td>
 
         </tr>
@@ -49,12 +49,12 @@
       </button>
    </div>
    <div class="modal-body">
-   <form  [formGroup]="UserForm" (ngSubmit)="onClickSubmit(UserForm.value)" >
+   <form  [formGroup]="UserForm" >
         <label>Id:</label>
-        <input type="text"  class="form-control" formControlName="Id" [value]="Id"  ><br>
+        <input type="text"  class="form-control" formControlName="Id" ><br>
         <lable>Title:</lable>
-        <input type="text" class="form-control"  formControlName="Title" [value]="Title">
-        <input type="submit"  class="btn btn-primary" value="Update" />
+        <input type="text" class="form-control"  formControlName="Title">
+        <button type="submit"  class="btn btn-primary" (click)="onClickSubmit(UserForm.value)">Update</button> 
     </form>
                  
     </div>
@@ -62,5 +62,26 @@
         <button  class="btn btn-primary" (click)="modalRef.hide()">clear</button>
     </div>
 </ng-template>
+
+<ng-template #template2>
+    <div class="modal-header">
+       <h4 class="modal-title pull-left">Delete data</h4>
+       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">×</span>
+       </button>
+    </div>
+    <div class="modal-body">
+       Are you sure delete the data!
+    </div>
+    <div class="modal-footer">
+       <button type="button" class="btn btn-primary" (click)="deleteData()">yes</button>
+       <button type="button" class="btn btn-primary" (click)="modalRef.hide()">No</button>
+    </div>
+ </ng-template>
+ <div>
+    <button type="submit" class="btn btn-primary"(click)="home()" >lazy</button>
+ </div>
+ 
+
 
 

@@ -27,6 +27,8 @@ import { HeadersInterceptor} from './headers.interceptor';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,8 @@ import { HeadersInterceptor} from './headers.interceptor';
     NagvbarComponent,
     DashboardComponent,
     AngularcrudComponent,
+   
+  
     
    ],
   imports: [
