@@ -18,7 +18,7 @@ export class CommonserviceService {
   const body={
     method:'PUT',
     body:JSON.stringify({
-      Id:1,
+      Id:data.id,
       Title:data.title,
       body:data.title,
       userId:data.id     
